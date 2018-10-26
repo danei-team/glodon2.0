@@ -1,15 +1,15 @@
 <template>
   <header class="nav">
     <div class="nav-box">
-      <div class="logo"><a href="#">GLODON广联达</a></div>
+      <div class="logo"><a href="#" @click="goto(0)">GLODON广联达</a></div>
       <div class="search">
         <input id="searchGlobal" maxlength="25" type="text" onkeydown="if(event.keyCode==13){$('#searchIcon').click();return false;}">
         <span id="searchIcon"></span>
       </div>
       <div class="navlist">
         <ul>
-          <li v-for="(item,index) of navlist" :key="index">
-            <a href="#" v-text="item" class=""  @click="goto(index)"></a>
+          <li v-for="(item,index) of navlist" :key="index" @click="goto(index)">
+            <a href="#" v-text="item"></a>
             <span v-if="index==1||index==2||index==5"></span>
           </li>
         </ul>
@@ -29,8 +29,11 @@ export default {
   methods:{
     goto(index){
       if(index==0) this.$router.push('home');
-      if(index==2) this.$router.push('solution');
+      else if(index==1) this.$router.push('proSer');
+      else if(index==2) this.$router.push('solution');
       else if(index==3) this.$router.push('application');
+      else if(index==4) this.$router.push('news');
+      else if(index==5) this.$router.push('aboutUs');
     }
   },
   mounted(){
