@@ -7,7 +7,7 @@
 <script>
 export default {
   mounted(){
-    this.$router.push('solution');
+    this.$router.push('home');
   }
 }
 </script>
