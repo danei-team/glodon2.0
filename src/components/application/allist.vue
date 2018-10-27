@@ -1,9 +1,10 @@
 <template>
+
   <div class="x_allist">
     <div class="allist">
       <ul class="clearfix">
         <li v-for="(item,index) in list" :key="index">
-         <a href="#">
+         <a href="#" @click="goin()">
           <div class="altu">
                 <img :title="item.title" :src="item.img_url">
                 <div class="alnr">
@@ -67,11 +68,30 @@ export default {
             {title:"帮助中信地产实现成本精细化、增值型管理",img_url:"/static/img/section/application/40.png"}
             ]
         }
+    },
+    methods:{
+        goin:function(){
+            this.$router.push('/aplibody');
+        },
+        addDelay(){
+            var lists = document.querySelectorAll('.allist ul li');
+            for(var i = 0;i<lists.length;i++){
+                var style = 'animation-delay: '+i*0.1+'s;';
+                lists[i].style = style;
+            }
+        }
+    },
+    mounted(){
+        this.addDelay();
     }
 }
 </script>
   
 <style scoped>
+@keyframes slideInUp{
+	0%{-webkit-transform:translateY(30%);transform:translateY(30%);}
+	100%{-webkit-transform:translateY(0);transform:translateY(0);}
+}
 .x_allist {
     width: 100%;
     background: #f7f8fa;
@@ -99,6 +119,8 @@ export default {
     -webkit-transition: all .4s ease-out;
     -moz-transition: all .4s ease-out;
     -ms-transition: all .4s ease-out;
+    transform:translateY(30%);
+    animation:slideInUp 1s;animation-fill-mode: forwards;
 }
 .clearfix:before, .clearfix:after {
     display: table;

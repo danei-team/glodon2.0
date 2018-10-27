@@ -1,15 +1,15 @@
 <template>
 <div class="application">
-  <banner></banner>
-  <cell></cell>
-  <allist></allist>
+<banner></banner>
+<cell></cell>
+<almain></almain>
 </div>
 </template>
 
 <script>
 import banner from './banner.vue'
 import cell from './cell.vue'
-import allist from './allist.vue'
+import almain from './almain.vue'
 export default {
   data(){
     return{
@@ -19,11 +19,13 @@ export default {
     components:{
         banner,
         cell,
-        allist
+        almain
+       
     }
 
 }
 </script>
 
 <style scoped>
+.application{margin-top: 60px;}
 </style>

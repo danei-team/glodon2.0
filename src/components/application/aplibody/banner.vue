@@ -13,6 +13,6 @@ export default {
 .al_banner {
     width: 100%;
     height: 300px;
-    background: url(/static/img/section/application/banner.jpg) no-repeat top center;
+    background: url(/static/img/section/application/aplibody/banner.jpg) no-repeat top center;
 }
 </style>

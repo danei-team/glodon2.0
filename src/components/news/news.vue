@@ -96,14 +96,26 @@ export default {
             this.page--;
         else
             this.page++;
+    },
+    addDelay(){
+      var lists = document.querySelectorAll('.news ul li');
+      for(var i = 0;i<lists.length;i++){
+        var style = 'animation-delay: '+i*0.1+'s;';
+        lists[i].style = style;
+      }
     }
-
-
+  },
+  mounted(){
+    this.addDelay();
   }
 }
 </script>
   
 <style scoped>
+@keyframes slideInUp{
+	0%{-webkit-transform:translateY(50%);transform:translateY(50%);}
+	100%{-webkit-transform:translateY(0);transform:translateY(0);}
+}
 a:hover{text-decoration: none;}
 .news{position:relative;top:60px;}
 .news-banner {height: 300px;text-align: center;width: 100%;min-width: 1200px;background: url(/static/img/section/news/nban.png) no-repeat top center;}
@@ -111,7 +123,7 @@ a:hover{text-decoration: none;}
 .news-main h3 {color: #000121;font-size: 30px;font-weight: normal;text-align: center;}
 .news-main h3 .title {color: #207be6;font-size: 20px;padding-top: 16px;display: block;}
 .news-main .news-list {width: 1200px;margin: 0 auto;}
-.news-main .news-list li {width: 575px;float: left;margin-top: 50px;padding-top: 40px;border-top: 1px #ddd solid;margin-right: 50px;}
+.news-main .news-list li {width: 575px;float: left;margin-top: 50px;padding-top: 40px;border-top: 1px #ddd solid;margin-right: 50px;transform:translateY(50%);animation:slideInUp 1s;animation-fill-mode: forwards;}
 .news-main .news-list li:nth-child(2n){margin-right:0px;}
 .news-main .news-list li .news-left {width: 182px;position: relative;margin-right: 20px;float: left;}
 .news-main .news-list li .news-left span{width: 50px;height: 35px; background-color: rgba(32,123,230,0.7);

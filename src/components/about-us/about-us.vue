@@ -54,12 +54,25 @@ export default {
       }
   },
   methods:{
-
+    addDelay(){
+      var lists = document.querySelectorAll('.news ul li');
+      for(var i = 0;i<lists.length;i++){
+        var style = 'animation-delay: '+i*0.1+'s;';
+        lists[i].style = style;
+      }
+    }
+  },
+  mounted(){
+    this.addDelay();
   }
 }
 </script>
   
 <style scoped>
+@keyframes slideInUp{
+	0%{-webkit-transform:translateY(20%);transform:translateY(20%);}
+	100%{-webkit-transform:translateY(0);transform:translateY(0);}
+}
 a:hover{text-decoration: none;}
 .clearfix:before, .clearfix:after {display: table; line-height: 0;content: "";}
 .us{position:relative;top:60px;}
@@ -70,7 +83,7 @@ a:hover{text-decoration: none;}
 .us .nav .us-nav .nav-item:first-child{font-size: 14px;color: #888;font-weight: bold;padding-right: 30px;}
 .us .us-banner{ background: url(/static/img/section/aboutUs/aban.png) no-repeat center;
 width: 100%;height: 300px;}
-.us .us-top{width: 1150px;margin: 80px auto 0 auto;background: #f6f7fa;}
+.us .us-top{width: 1150px;margin: 80px auto 0 auto;background: #f6f7fa;transform:translateY(20%);animation:slideInUp 1s;animation-fill-mode: forwards;}
 .us .us-top div{width: 492px;float: left;padding: 43px 0 0 80px;}
 .us .us-top div h3{    color: #4a8bbb;line-height: 28px;font-size: 20px;padding-bottom: 20px;
 font-weight: normal;}

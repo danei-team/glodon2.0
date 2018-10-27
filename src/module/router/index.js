@@ -6,6 +6,7 @@ import application from '../../components/application/application'
 import solution from '../../components/solution/solution'
 import news from '../../components/news/news'
 import aboutUs from '../../components/about-us/about-us'
+import aplibody from '../../components/application/aplibody/aplibody'
 
 Vue.use(Router)
 
@@ -34,6 +35,10 @@ export default new Router({
     {
       path:'/aboutUs',
       component:aboutUs
+    },
+    {
+      path:'/aplibody',
+      component:aplibody
     }
   ]
 })

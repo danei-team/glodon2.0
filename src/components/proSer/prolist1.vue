@@ -40,12 +40,26 @@ export default {
       ]
     }
   },
+  methods:{
+    addDelay(){
+      var lists = document.querySelectorAll('.dt4_list ul li');
+      for(var i = 0;i<lists.length;i++){
+        var style = 'animation-delay: '+i*0.1+'s;';
+        lists[i].style = style;
+      }
+    }
+  },
   mounted(){
+    this.addDelay();
   }
 }
 </script>
   
 <style scoped>
+@keyframes slideInUp{
+	0%{-webkit-transform:translateY(100%);transform:translateY(50%);}
+	100%{-webkit-transform:translateY(0);transform:translateY(0);}
+}
 a:hover{text-decoration: none}
 .clearfix::after{content: '';display: block;clear: both;}
 .dt4{width: 100%;position: relative;padding-bottom: 10px;background: #f0f0f0;}
@@ -56,7 +70,8 @@ a:hover{text-decoration: none}
 .dt4_list{width: 1180px;margin: 0 auto;}
 .dt4_list ul{width: 100%;margin-top: 33px;}
 .dt4_list ul li{width: 380px;border-radius: 5px;box-shadow: 0px 0px 3px #ccc;float: left;margin-right: 17px;
-margin-bottom: 28px;background: #fff;border: 1px #d8d8d8 solid;transition: all .4s ease-out;}
+background: #fff;border: 1px #d8d8d8 solid;margin-bottom: 28px;
+transition: all .4s ease-out;transform:translateY(50%);animation:slideInUp 1s;animation-fill-mode: forwards;}
 .dt4_list ul li:nth-child(3n){margin-right: 0;}
 .dt4_list ul li:hover{box-shadow: 0 0 30px rgba(33,37,44,.5);}
 .dt4_list li>a{color: #666;font-size: 12px;}

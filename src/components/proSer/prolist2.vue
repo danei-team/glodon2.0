@@ -56,17 +56,25 @@ export default {
     }
   },
   methods:{
-    changeTop(){
-      var lists = document.querySelectorAll('news ul li');
+    addDelay(){
+      var lists = document.querySelectorAll('.news ul li');
+      for(var i = 0;i<lists.length;i++){
+        var style = 'animation-delay: '+i*0.1+'s;';
+        lists[i].style = style;
+      }
     }
   },
   mounted(){
-    
+    this.addDelay();
   }
 }
 </script>
   
 <style scoped>
+@keyframes slideInUp{
+	0%{-webkit-transform:translateY(50%);transform:translateY(50%);}
+	100%{-webkit-transform:translateY(0);transform:translateY(0);}
+}
 a:hover{text-decoration: none}
 .clearfix::after{content: '';display: block;clear: both;}
 .dt4{width: 100%;position: relative;padding-bottom: 45px; background: #fff;}
@@ -75,14 +83,10 @@ a:hover{text-decoration: none}
 .park_c p{color: #333;font-size: 16px;}
 .park_c span{margin: 0 auto;display: block;width: 30px;height: 2px;background: #666;}
 
-@keyframes slideInUp{
-  from {top:50px;}
-  to {top:0px;}
-}
 .news{width: 1180px;margin: 0 auto;padding-bottom: 40px;}
 .news ul{width:100%;overflow: hidden;}
 .news ul li{visibility: visible;  width: 380px;float: left;margin: 20px 20px 0 0;position: relative;
-animation: slideInUp 1.6s;}
+transform:translateY(50%);animation:slideInUp 1s;animation-fill-mode: forwards;}
 .news ul li:nth-child(3n){margin-right: 0;}
 .news ul li .border_top,.news ul li .border_bottom{height: 1px;width: 0;transition: all .4s ease;}
 .news ul li .border_left,.news ul li .border_right{height: 0px;width: 1px;transition: all .4s ease;}

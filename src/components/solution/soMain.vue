@@ -87,12 +87,26 @@ export default {
         ev2:function(index){
               if(index%2==0) return false;
             else return true;
+        },
+        addDelay(){
+            var lists = document.querySelectorAll('.f_main ul li');
+            for(var i = 0;i<lists.length;i++){
+                var style = 'animation-delay: '+i*0.3+'s;';
+                lists[i].style = style;
+            }
         }
+    },
+    mounted(){
+        this.addDelay();
     }
 }
 </script>
   
 <style scoped>
+@keyframes slideInUp{
+	0%{-webkit-transform:translateY(20%);transform:translateY(20%);}
+	100%{-webkit-transform:translateY(0);transform:translateY(0);}
+}
 a{
      text-decoration: none;
      color:#333;
@@ -113,6 +127,7 @@ a{
     height: 490px;
     padding: 75px 0px;
     background: #fff;
+    transform:translateY(20%);animation:slideInUp 1s;animation-fill-mode: forwards;
 }
 .f_main ul li .f_part{
     width: 1180px;

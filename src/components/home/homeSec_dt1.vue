@@ -38,6 +38,9 @@ export default {
   mounted(){
     if(!this.timer) clearInterval(this.timer)
     this.caral()
+  },
+  destroyed(){
+    clearInterval(this.timer)
   }
 }
 </script>
