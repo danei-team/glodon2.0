@@ -5,15 +5,17 @@
     <dt3></dt3>
     <dt4></dt4>
     <dt5></dt5>
+    <side-bar></side-bar>
   </div>
 </template>
   
 <script>
-import dt1 from './homeSec_dt1.vue'
-import dt2 from './homeSec_dt2.vue'
-import dt3 from './homeSec_dt3.vue'
-import dt4 from './homeSec_dt4.vue'
-import dt5 from './homeSec_dt5.vue'
+import dt1 from './homeSec_dt1'
+import dt2 from './homeSec_dt2'
+import dt3 from './homeSec_dt3'
+import dt4 from './homeSec_dt4'
+import dt5 from './homeSec_dt5'
+import sideBar from './sideBar'
 
 export default {
   components:{
@@ -21,7 +23,8 @@ export default {
     dt2,
     dt3,
     dt4,
-    dt5
+    dt5,
+    sideBar
   },
   mounted(){
 

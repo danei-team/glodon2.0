@@ -55,7 +55,13 @@ export default {
       ]
     }
   },
+  methods:{
+    changeTop(){
+      var lists = document.querySelectorAll('news ul li');
+    }
+  },
   mounted(){
+    
   }
 }
 </script>
@@ -69,14 +75,14 @@ a:hover{text-decoration: none}
 .park_c p{color: #333;font-size: 16px;}
 .park_c span{margin: 0 auto;display: block;width: 30px;height: 2px;background: #666;}
 
+@keyframes slideInUp{
+  from {top:50px;}
+  to {top:0px;}
+}
 .news{width: 1180px;margin: 0 auto;padding-bottom: 40px;}
 .news ul{width:100%;overflow: hidden;}
-.news ul li{    visibility: visible;
-    animation-delay: 0.1s;
-    animation-name: slideInUp;    width: 380px;
-    float: left;
-    margin: 20px 20px 0 0;
-    position: relative;}
+.news ul li{visibility: visible;  width: 380px;float: left;margin: 20px 20px 0 0;position: relative;
+animation: slideInUp 1.6s;}
 .news ul li:nth-child(3n){margin-right: 0;}
 .news ul li .border_top,.news ul li .border_bottom{height: 1px;width: 0;transition: all .4s ease;}
 .news ul li .border_left,.news ul li .border_right{height: 0px;width: 1px;transition: all .4s ease;}
@@ -84,39 +90,13 @@ a:hover{text-decoration: none}
 .news ul li .border_right,.news ul li .border_bottom{bottom: 0;right: 0;position: absolute;background: #207be6;} 
 .news ul li:hover .border_left,.news ul li:hover .border_right{height: 100%;}
 .news ul li:hover .border_top,.news ul li:hover .border_bottom{width: 100%;}
-.news ul li a{    color: #191e28;
-    border: 1px #e2e2e2 solid;
-    width: 378px;
-    display: block;
-    height: 177px;}
+.news ul li a{color: #191e28;border: 1px #e2e2e2 solid;width: 378px;display: block;height: 177px;}
 .new_park{width: 100%;}
-.new_park>div{width: 338px;
-    margin: 20px auto 0;}
-.new_park>div>img{    width: 64px;
-    height: 64px;
-    float: left;}
-.new_park>div>h3{    float: right;
-    width: 254px;
-    padding: 10px 0 0 0;
-    font-weight: normal;}
-.new_park>div>h3>span{    font-size: 24px;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;}
-.new_park>div>h3>font{    font-size: 16px;
-    color: #333;
-    line-height: 22px;
-    padding-top: 6px;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;}
-.new_park>p{    width: 338px;
-    margin: 0 auto;
-    padding-top: 9px;
-    font-size: 12px;
-    color: #666;
-    line-height: 22px;
-    padding-bottom: 16px;}
+.new_park>div{width: 338px;margin: 20px auto 0;}
+.new_park>div>img{width: 64px;height: 64px;float: left;}
+.new_park>div>h3{float: right;width: 254px;padding: 10px 0 0 0;font-weight: normal;}
+.new_park>div>h3>span{font-size: 24px;display: block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.new_park>div>h3>font{font-size: 16px;color: #333;line-height: 22px;padding-top: 6px;display: block;white-space: nowrap;
+overflow: hidden;text-overflow: ellipsis;}
+.new_park>p{width: 338px;margin: 0 auto;padding-top: 9px;font-size: 12px;color: #666;  line-height: 22px;padding-bottom: 16px;}
 </style>
